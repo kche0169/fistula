@@ -1,14 +1,16 @@
 package utils
 
-func Min(nums ...int) int {
+func Min[T Number](nums ...T) T {
 	if len(nums) == 0 {
-		return 0
+		var zero T
+		return zero
 	}
-	min := nums[0]
+	max := nums[0]
 	for _, n := range nums[1:] {
-		if n < min {
-			min = n
+		if n < max {
+
+			max = n
 		}
 	}
-	return min
+	return max
 }
